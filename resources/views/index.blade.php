@@ -24,6 +24,11 @@
     </header>
 
     <!-- Menu -->
+    @if(!empty($msg))
+            <div class = "row">
+                <span>{{$msg}}</span>
+            </div>
+    @endif
     <div class="nav-content">
       <menu class="menu">
         <ul class="container">

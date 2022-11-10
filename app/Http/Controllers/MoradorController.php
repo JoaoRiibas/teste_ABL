@@ -40,7 +40,9 @@ class MoradorController extends Controller
         $apartamentos = Apartamento::where("id", $request->id_apto)->first();
         
         if(empty($apartamentos)){
-            return Redirect::to('/morador/mostrar');
+            $moradors = Morador::all();
+            $msg = "          Nao e possivel cadastrar morador em um apartamento nao existente!";
+            return view('index', ['msg'=>$msg]);
         }
 
         Morador::create([
@@ -50,8 +52,8 @@ class MoradorController extends Controller
             'telefone' => $request->telefone,
             'email' => $request->email,
         ]);
-        
-        return view('index');
+        $msg = "              Morador cadastrado com sucesso!";
+        return view('index',['msg'=>$msg]);
     }
 
     /**

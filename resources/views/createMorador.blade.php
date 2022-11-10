@@ -6,7 +6,7 @@
 
 
 @if( Request::is('*/edit'))
-<form action = "{{ route('salvar_morador') }}" method = "post">
+<form action = "{{ route('update_morador', $morador->id) }}" method = "post">
     @csrf 
     <div class="form-group">
         <div class="form-group">

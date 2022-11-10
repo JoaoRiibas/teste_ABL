@@ -26,17 +26,17 @@
             
             @foreach($moradors as $morador)
             <tr>
-                <td name = "morador_id">{{$morador->morador_id}}</td>
+                <td name = "morador_id">{{$morador->id}}</td>
                 <td name = "id_apto">{{$morador->id_apto}}</td>
                 <td name = "nome">{{$morador->nome}}</td>
                 <td name = "cpf">{{$morador->cpf}}</td>
                 <td name = "email">{{$morador->email}}</td>
                 <td name = "telefone">{{$morador->telefone}}</td>
                 <td>
-                    <a href="morador/{{$morador->morador_id}}/edit" class="btn btn-dark">Editar</a>
+                    <a href="/morador/{{$morador->id}}/edit" class="btn btn-dark">Editar</a>
                 </td>
                 <td>
-                    <form action=" morador/del/{{$morador->morador_id}}" title = "Excluir Morador {{$morador->nome}}" method = "post">
+                    <form action= "/morador/del/{{$morador->id}}" title = "Excluir Morador {{$morador->nome}}" method = "post">
                     @csrf
                     @method('delete')    
                     <button type="submit" class="btn btn-danger">Excluir</button>

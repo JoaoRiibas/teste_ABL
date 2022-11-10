@@ -78,9 +78,18 @@ class MoradorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateMorador(Request $request, $id)
     {
-        //
+        $morador = Morador::findOrFail($id);
+        $morador->update([
+            'id_apto' => $request->id_apto,
+            'nome' => $request->nome,
+            'cpf'=> $request->cpf,
+            'telefone' => $request->telefone,
+            'email' => $request->email,
+        ]);
+        //dd($request->all(), $id);
+        return Redirect::to('/morador/mostrar');
     }
 
     /**
@@ -91,8 +100,15 @@ class MoradorController extends Controller
      */
     public function destroyMorador($morador_id)
     {  
-        $morador = Morador::findOrFail($morador_id);
-        $morador->delete();
-        return Redirect::to('/');
+        
+        try{
+            //dd($morador_id);
+            Morador::find($morador_id)->delete();
+            return Redirect::to('/morador/mostrar');
+        }
+        catch(\Exception $e){
+              report($e);
+        }
+ 
     }
 }

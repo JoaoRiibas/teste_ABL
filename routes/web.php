@@ -31,4 +31,6 @@ Route::post('/morador', 'App\Http\Controllers\MoradorController@storeMorador')->
 
 Route::delete('/morador/del/{morador_id}', 'App\Http\Controllers\MoradorController@destroyMorador')->name('excluir_morador');
 
-Route::get('/morador/{morador_id}/edit', 'App\Http\Controllers\MoradorController@editMorador');
+Route::get('/morador/{morador_id}/edit', 'App\Http\Controllers\MoradorController@editMorador')->name('editar_morador');
+
+Route::post('/morador/update/{morador_id}', 'App\Http\Controllers\MoradorController@updateMorador')->name('update_morador');

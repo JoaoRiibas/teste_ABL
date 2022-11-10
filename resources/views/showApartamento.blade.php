@@ -1,9 +1,8 @@
 @extends('templates.template')
 
 @section('content')
-    
     <h1 class = "text-center">Apartamentos</h1>
-    
+
     <div class = "col-8 m-auto"> 
         <div class = "card-header">
             <a href="{{ url('/') }}">Voltar</a>
@@ -21,10 +20,12 @@
             
             @foreach($apartamentos as $apartamento)
             <tr>
-                <td>{{$apartamento->apartamento_id}}</td>
+                <td>{{$apartamento->id}}</td>
                 <td>{{$apartamento->nome_edificio}}</td>
                 <td>{{$apartamento->numero_apto}}</td>
-                <td>Editar</td>
+                <td>
+                    <a href="/apartamento/{{$apartamento->id}}/edit" class="btn btn-dark">Editar</a>
+                </td>
             </tr>
             @endforeach
             

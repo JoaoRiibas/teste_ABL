@@ -34,3 +34,5 @@ Route::delete('/morador/del/{morador_id}', 'App\Http\Controllers\MoradorControll
 Route::get('/morador/{morador_id}/edit', 'App\Http\Controllers\MoradorController@editMorador')->name('editar_morador');
 
 Route::post('/morador/update/{morador_id}', 'App\Http\Controllers\MoradorController@updateMorador')->name('update_morador');
+Route::get('/apartamento/{apartamento_id}/edit', 'App\Http\Controllers\ApartamentoController@editApartamento')->name('editar_apartamento');
+Route::post('/apartamento/update/{apartamento_id}', 'App\Http\Controllers\ApartamentoController@updateApartamento')->name('update_apartamento');

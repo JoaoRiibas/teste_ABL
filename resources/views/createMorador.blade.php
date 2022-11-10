@@ -6,6 +6,8 @@
 
 
 @if( Request::is('*/edit'))
+<h1 class = "text-center">Editar Apartamento</h1>
+
 <form action = "{{ route('update_morador', $morador->id) }}" method = "post">
     @csrf 
     <div class="form-group">
@@ -31,7 +33,7 @@
         </div>
     </div>
     
-    <button type="submit" class="btn btn-dark">Editar</button>
+    <button type="submit" class="btn btn-dark">Salvar</button>
     
     @else
     

@@ -5,20 +5,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Apartamento;
 use Illuminate\Http\Request;
-use Illuminate\Support\ViewErrorBag;
-use App\Http\Controllers\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class ApartamentoController extends Controller
 {
-    private $objPredio;
-    private $objApto;
-    private $objMorador;
-    
-    public function __construct()
-    {
-        $this->objPredio = new Apartamento();
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -75,9 +65,10 @@ class ApartamentoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function editApartamento($id)
+    public function editApartamento($apartamento_id)
     {
-        //
+        $apartamento = Apartamento::findOrFail($apartamento_id);
+        return view('createApartamento', ['apartamento' => $apartamento]);
     }
 
     /**
@@ -89,19 +80,11 @@ class ApartamentoController extends Controller
      */
     public function updateApartamento(Request $request, $id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroyApartamento($id)
-    {
         $apartamento = Apartamento::findOrFail($id);
-        $apartamento->delete();
-        return view('index');
+        $apartamento->update([
+            'nome_edificio' => $request->nome_edificio,
+            'numero_apto' => $request->numero_apto,
+        ]);
+        return Redirect::to('/apartamento/mostrar');
     }
 }

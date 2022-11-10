@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apartamento;
 use App\Models\Morador;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -36,6 +37,12 @@ class MoradorController extends Controller
      */
     public function storeMorador(Request $request)
     {
+        $apartamentos = Apartamento::where("id", $request->id_apto)->first();
+        
+        if(empty($apartamentos)){
+            return Redirect::to('/morador/mostrar');
+        }
+
         Morador::create([
             'id_apto' => $request->id_apto,
             'nome' => $request->nome,
@@ -81,6 +88,12 @@ class MoradorController extends Controller
     public function updateMorador(Request $request, $id)
     {
         $morador = Morador::findOrFail($id);
+        $apartamentos = Apartamento::where("id", $request->id_apto)->first();
+        
+        if(empty($apartamentos)){
+            return Redirect::to('/morador/mostrar');
+        }
+
         $morador->update([
             'id_apto' => $request->id_apto,
             'nome' => $request->nome,
@@ -88,7 +101,6 @@ class MoradorController extends Controller
             'telefone' => $request->telefone,
             'email' => $request->email,
         ]);
-        //dd($request->all(), $id);
         return Redirect::to('/morador/mostrar');
     }
 

@@ -1,66 +1,70 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# teste_ABL
+![Home-page](https://user-images.githubusercontent.com/109229894/201083204-e93b1ab7-ce2a-4f4f-821f-304040a360ea.png)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Situação: finalizado!
 
-## About Laravel
+## Sistema para gerenciamento de moradores de um condomínio
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![Cadastro-Apartamento](https://user-images.githubusercontent.com/109229894/201083623-ce6fbfe9-df63-4f99-aad3-57e3c89866c3.png)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![Visualizar-Apartamento](https://user-images.githubusercontent.com/109229894/201084311-b71ed25c-79ff-4093-a7a0-5dd5b1dccb5c.png)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![Cadastro-Morador](https://user-images.githubusercontent.com/109229894/201084411-791c57dd-c95a-44dc-a4ba-5edcf66d7e7f.png)
 
-## Learning Laravel
+![Visualizar-Morador](https://user-images.githubusercontent.com/109229894/201084495-181e6571-17af-416e-97d5-102daa97e1ff.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Para o desenvolvimento do CRUD do sistema foram utilizadas duas tabelas:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Moradors        |
+-------------   |
+id              |
+fk_id_apto      | 
+nome            |
+cpf             |
+telefone        | 
+email           |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Apartamentos    | 
+-------------   |
+id              |
+nome_edificio   |
+numero_apto     |
 
-## Laravel Sponsors
+-----------------------------------
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+><strong>Relacionamento entre as tabelas</strong>
 
-### Premium Partners
+![Relacionamento](https://user-images.githubusercontent.com/109229894/201085044-cb83867e-c343-4fd3-8e65-0451f20d2b22.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+><strong>Tecnologias usadas</strong>
+<table>
+   <tr>
+     <td><strong>Tecnologia</strong></td>
+     <td>PHP</td>
+     <td>MySQL</td>
+     <td>Laravel</td>
+     <td>Composer</td>
+     <td>HTML</td>
+     <td>Bootstrap</td>
+   </tr>
+   <tr>
+     <td><strong>Versão</strong></td>
+     <td>8.0.24</td>
+     <td>8.0</td>
+     <td>9.38.0</td>
+     <td>2.4.4</td>
+     <td>5</td>
+     <td>4.1.3</td>
+   </tr>
+</table>
 
-## Contributing
+## Como executar o código:
+1. Certifique-se de ter o PHP, MySQL, Laravel e o Composer instalados no seu dispositivo
+2. Baixe a pasta do projeto
+3. Verifique a conexão do seu banco de dados no arquivo .env
+4. No terminal do seu projeto, execute o comando -> php artisan migrate para criar o seu banco de dados
+5. No terminal do seu projeto, execute o comando -> php artisan serve para iniciar o servidor do projeto
+6. Execute o projeto em algum navegador
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## OBS:
+Esse commit foi realizado após o prazo, pois ao realiza-lo ontem ocorreu um erro no commit e eu nao me atentei!
